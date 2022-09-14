@@ -1,7 +1,7 @@
 .bd-placeholder-img {
     object-fit: cover;
     font-size: 1.125rem;
-    text-anchor: middle;
+    text-anchor: start;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
@@ -34,6 +34,7 @@
       margin-bottom: 1.25rem;
       font-size: 1.25rem;
       line-height: 1.4;
+      font-family: "Comic Sans MS", "Comic Sans", cursive;
     }
   
     .featurette-heading {
@@ -58,4 +59,18 @@
         rgba(0, 24, 51, 0.7)
     ), 
     url('/static/images/heroes/secondary.png');
+}
+.info-alert {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+}
+
+.bg-featured-blog {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 15rem;
 }
