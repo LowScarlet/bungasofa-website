@@ -69,11 +69,11 @@ function Main() {
           <div className={`${styles['carousel-item']} carousel-item`}>
             <img className={styles['bd-placeholder-img']} width="100%" height="100%" src="/static/images/heroes/secondary-2.png" />
 
-            <div className="${styles['carousel-caption']} carousel-caption text-end">
+            <div className={`${styles['carousel-caption']} carousel-caption text-end`}>
               <div className='container'>
                 <Image className="d-block mx-auto" src="/static/logo/logo_with_brandname.png" alt="" width={236} height={64} />
                 <p>
-                  Kelembutan, kehangatan dan Warna menawarkan ketenangan dan relaksasi, mengurangi semua stres Anda.
+                  Kelembutan dan Warna menawarkan ketenangan dan relaksasi, mengurangi semua stres Anda.
                 </p>
                 <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-end">
                   <Link href="/account">
