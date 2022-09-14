@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 // import type { NextPage } from 'next'
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
+import { Button, Col, Form, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
 import Layout from '../components/layout'
 import Image from 'next/image'
 import styles from './style.module.css'
@@ -11,24 +11,6 @@ import Head from 'next/head'
 import { useState } from 'react'
 
 function Main() {
-  const [modal, setModal] = useState(false);
-  const [backdrop, setBackdrop] = useState(true);
-  const [keyboard, setKeyboard] = useState(true);
-
-  const toggle = () => setModal(!modal);
-
-  const changeBackdrop = (e:any) => {
-    let { value } = e.target;
-    if (value !== 'static') {
-      value = JSON.parse(value);
-    }
-    setBackdrop(value);
-  };
-
-  const changeKeyboard = (e:any) => {
-    setKeyboard(e.currentTarget.checked);
-  };
-  
   return (<>
     <Head>
       <title>Bunga Sofa - Servis & Produsen Sofa Riau</title>
@@ -46,10 +28,18 @@ function Main() {
               Menerima pembuatan custom sofa dan service sofa berbagai model untuk rumah, kantor, apartement, hotel dan keperluan lainnya dengan biaya yang sangat bersaing.
             </p>
             <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              <Button className="btn-lg px-4 gap-3" color="success" onClick={toggle}>
-                <i className="bi bi-whatsapp"></i> Chat Kami
-              </Button>
-              <button type="button" className="btn btn-outline-light btn-lg px-4"><i className="bi bi-journal"></i> Lihat Layanan Kami</button>
+              <form action="https://api.whatsapp.com/send?phone=6282233223303" method='get'>
+                <input type="text" name="phone" value="6282233223303" hidden/>
+                <input type="text" name="text" value="acrit banegt" hidden/>
+                <button type='submit' className="btn btn-success btn-lg px-4 gap-3">
+                  <i className="bi bi-whatsapp"></i> Chat Kami
+                </button>
+              </form>
+              <Link href="/layanan">
+                <a className="btn btn-outline-light btn-lg px-4">
+                  <i className="bi bi-journal"></i> Lihat Layanan Kami
+                </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -99,7 +89,7 @@ function Main() {
               <div className="col-lg-6 col-xl-7">
                 <div
                   className={styles['bg-featured-blog']}
-                  style={{backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")"}}>
+                  style={{ backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")" }}>
                 </div>
               </div>
             </div>
@@ -134,31 +124,6 @@ function Main() {
         </div>
       </div>
     </Layout>
-    <Modal
-      isOpen={modal}
-      toggle={toggle}
-      backdrop={backdrop}
-      keyboard={keyboard}
-    >
-      <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-      <ModalBody>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum.
-      </ModalBody>
-      <ModalFooter>
-        <Button color="primary" onClick={toggle}>
-          Do Something
-        </Button>{' '}
-        <Button color="secondary" onClick={toggle}>
-          Cancel
-        </Button>
-      </ModalFooter>
-    </Modal>
   </>)
 }
 
