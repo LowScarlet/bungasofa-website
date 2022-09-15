@@ -1,6 +1,28 @@
-
 .bi {
     vertical-align: -.125em;
     fill: currentColor;
     font-size: 24px;
+}
+
+.floating {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+}
+.secondary-heroes {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #222;
+  background-image:
+    linear-gradient(
+        rgba(0, 24, 51, 0.7),
+        rgba(0, 24, 51, 0.2),
+        rgba(0, 24, 51, 0.7)
+    ), 
+    url('/static/images/heroes/secondary.png');
 }

@@ -23,10 +23,14 @@ function Main() {
             <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Layanan</a>
             <ul className="dropdown-menu dropdown-menu-dark gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px">
               <li>
-                <a className="dropdown-item rounded-2" href="#">Servis Sofa</a>
+                <Link href="/layanan#servis-sofa">
+                  <a className="dropdown-item rounded-2">Servis Sofa</a>
+                </Link>
               </li>
               <li>
-                <a className="dropdown-item rounded-2" href="#">Pembuatan Sofa</a>
+                <Link href="/layanan#pembuatan-sofa">
+                  <a className="dropdown-item rounded-2">Pembuatan Sofa</a>
+                </Link>
               </li>
             </ul>
           </li>

@@ -10,7 +10,7 @@ import Link from 'next/link'
 import Marquee from "react-fast-marquee";
 import Head from 'next/head'
 import { useState } from 'react'
-import {whatsapp_message} from '../components/whatsapp_message'
+import { whatsapp_message } from '../components/whatsapp_message'
 
 function Main() {
   return (<>
@@ -175,45 +175,49 @@ function Main() {
       </div>
 
       <div className='bg-light'>
-      <div className='container mt-5 pt-5'>
-        <div className="text-center">
-          <h2 className="fw-bolder">SEKILAS TENTANG BUNGA SOFA</h2>
-          <p className="lead fw-normal text-muted mb-5">Penasaran dengan kami? kepoin yuk</p>
-        </div>
-        <div className="row featurette">
-          <div className="col-md-7 py-2">
-            <div className='mb-2'>
-              <h2 className="featurette-heading fw-normal lh-1"><i className="pe-2 bi bi-caret-right-fill"></i>Jenis bahan yang kami gunakan</h2>
-              <p className="lead">Material pembuatan dan service sofa berkualitas, busa bersetifikasi tinggi internasional dan menggunakan kain yang berserat halus untuk menciptakan kenyamanan penggunanya.</p>
+        <div className='container mt-5 pt-5'>
+          <div className="text-center">
+            <h2 className="fw-bolder">SEKILAS TENTANG BUNGA SOFA</h2>
+            <p className="lead fw-normal text-muted mb-5">Penasaran dengan kami? kepoin yuk</p>
+          </div>
+          <div className="row featurette">
+            <div className="col-md-7 py-2">
+              <div className='mb-2'>
+                <h2 className="featurette-heading fw-normal lh-1"><i className="pe-2 bi bi-caret-right-fill"></i>Jenis bahan yang kami gunakan</h2>
+                <p className="lead">Material pembuatan dan service sofa berkualitas, busa bersetifikasi tinggi internasional dan menggunakan kain yang berserat halus untuk menciptakan kenyamanan penggunanya.</p>
+              </div>
+              <div className='mb-2'>
+                <h2 className="featurette-heading fw-normal lh-1"><i className="pe-2 bi bi-caret-right-fill"></i>Berbagai Macam Bentuk Sofa</h2>
+                <p className="lead">Kami dapat melakukan service pada sofa dengan berbagai macam bentuk sebagai berikut:</p>
+                <ul className="text-muted">
+                  <li>Sofa 3.2.1</li>
+                  <li>Sofa sudut L</li>
+                  <li>Sofa minimalis</li>
+                  <li>Sofa bed</li>
+                  <li>Sofa Jaguar</li>
+                  <li>Sofa Syahrini</li>
+                  <li>Dan lain-lain</li>
+                </ul>
+              </div>
             </div>
-            <div className='mb-2'>
-              <h2 className="featurette-heading fw-normal lh-1"><i className="pe-2 bi bi-caret-right-fill"></i>Berbagai Macam Bentuk Sofa</h2>
-              <p className="lead">Kami dapat melakukan service pada sofa dengan berbagai macam bentuk sebagai berikut:</p>
-              <ul className="text-muted">
-                <li>Sofa 3.2.1</li>
-                <li>Sofa sudut L</li>
-                <li>Sofa minimalis</li>
-                <li>Sofa bed</li>
-                <li>Sofa Jaguar</li>
-                <li>Sofa Syahrini</li>
-                <li>Dan lain-lain</li>
-              </ul>
+            <div className="col-md-5">
+              <img className={`${styles['bd-placeholder-img']} mx-auto rounded-top`} width="100%" height="500" src="/static/images/wall-1.png" />
             </div>
           </div>
-          <div className="col-md-5">
-            <img className={`${styles['bd-placeholder-img']} mx-auto rounded-top`} width="100%" height="500" src="/static/images/wall-1.png" />
+          <div className="mt-3 row gx-5 align-items-center">
+            <div className="col-lg-6">
+              <div id="map-container-google-2" className="pt-3 z-depth-1-half map-container" style={{height: "500px"}}>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3354.951619395994!2d102.27140055243648!3d-0.3761584680162686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e2991f6f237b029%3A0xa919f42516a25f4e!2sBunga%20Sofa!5e0!3m2!1sen!2sid!4v1655500319544!5m2!1sen!2sid" width="100%" height="450" style={{border: 0}} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <h2 className="featurette-heading fw-normal lh-1"><i className="pe-2 bi bi-caret-right-fill"></i>Tentang Kami</h2>
+              <p className="lead">
+              Bunga Sofa adalah workshop yang bergerak di bidang furniture. Kami menerima pembuatan sofa costum dan servis sofa dengan berbagai jenis/model. Kami menyediakan jasa pembuatan dan servis sofa dengan berbagai jenis dan model untuk berbagai lokasi seperti, perumahan, perkantoran, sekolah, cafe, gedung pemerintahan, fasilitas umum, dan lokasi lainnya yang berada di Kota Air Molek.
+              </p>
+            </div>
           </div>
         </div>
-        <div className="mt-3 row gx-5 align-items-center">
-          <div className="col-lg-6"><img className="img-fluid rounded-top mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
-          <div className="col-lg-6">
-            <h2 className="featurette-heading fw-normal lh-1"><i className="pe-2 bi bi-caret-right-fill"></i>Tentang Kami</h2>
-            <p className="lead">
-              Cahaya Sofa adalah workshop yang bergerak pada bidang pembuatan dan service sofa / kursi yang beralamat di Jogja. Kami menyediakan jasa pembuatan dan service sofa dengan berbagai jenis dan model, untuk berbagai lokasi seperti, perumahan, perkantoran, sekolah, cafe, gedung pemerintahan,fasilitas umum, dan lokasi lainnya yang berada di daerah Jogja dan sekitarnya.
-            </p>
-          </div>
-        </div>
-      </div>
       </div>
     </Layout>
   </>)
