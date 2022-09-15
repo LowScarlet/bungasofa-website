@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 function Main() {
@@ -14,23 +15,30 @@ function Main() {
       <div className="collapse navbar-collapse" id="navbarsExample07">
         <ul className="nav nav-pills navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase font-weight-bold text-center">
           <li className="nav-item ps-lg-3">
-            <a className="nav-link active" aria-current="page" href="#">Beranda</a>
+            <Link href="/">
+              <a className="nav-link active">Beranda</a>
+            </Link>
           </li>
           <li className="nav-item ps-lg-3 dropdown">
             <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Layanan</a>
             <ul className="dropdown-menu dropdown-menu-dark gap-1 p-2 rounded-3 mx-0 border-0 shadow w-220px">
-              <li><a className="dropdown-item rounded-2" href="#">Servis Sofa</a></li>
-              <li><a className="dropdown-item rounded-2" href="#">Pembuatan Sofa</a></li>
+              <li>
+                <a className="dropdown-item rounded-2" href="#">Servis Sofa</a>
+              </li>
+              <li>
+                <a className="dropdown-item rounded-2" href="#">Pembuatan Sofa</a>
+              </li>
             </ul>
           </li>
           <li className="nav-item ps-lg-3">
-            <a className="nav-link" href="#">Tentang Kami</a>
+            <Link href="/tentang">
+              <a className="nav-link">Tentang Kami</a>
+            </Link>
           </li>
           <li className="nav-item ps-lg-3">
-            <a className="nav-link" href="#">Artikel</a>
-          </li>
-          <li className="nav-item ps-lg-3">
-            <a className="nav-link" href="#">Kontak</a>
+            <Link href="/kontak">
+              <a className="nav-link">Kontak</a>
+            </Link>
           </li>
         </ul>
       </div>

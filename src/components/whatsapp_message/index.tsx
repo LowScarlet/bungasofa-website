@@ -1,0 +1,1 @@
+export const whatsapp_message = "Halo admin Bunga Sofa tolong jasa servis dan pembuatan sofa-nya."

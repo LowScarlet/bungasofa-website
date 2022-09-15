@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 // import type { NextPage } from 'next'
@@ -9,6 +10,7 @@ import Link from 'next/link'
 import Marquee from "react-fast-marquee";
 import Head from 'next/head'
 import { useState } from 'react'
+import {whatsapp_message} from '../components/whatsapp_message'
 
 function Main() {
   return (<>
@@ -28,13 +30,13 @@ function Main() {
               Menerima pembuatan custom sofa dan service sofa berbagai model untuk rumah, kantor, apartement, hotel dan keperluan lainnya dengan biaya yang sangat bersaing.
             </p>
             <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              <form action="https://api.whatsapp.com/send?phone=6282233223303" method='get'>
-                <input type="text" name="phone" value="6282233223303" hidden/>
-                <input type="text" name="text" value="acrit banegt" hidden/>
-                <button type='submit' className="btn btn-success btn-lg px-4 gap-3">
-                  <i className="bi bi-whatsapp"></i> Chat Kami
-                </button>
+              <form id="chat-us" action="https://api.whatsapp.com/send?phone=6282233223303" method='get' target="_blank">
+                <input type="text" name="phone" value="6282233223303" hidden />
+                <input type="text" name="text" value={`${whatsapp_message}`} hidden />
               </form>
+              <button type='submit' form='chat-us' className="btn btn-success btn-lg px-4 gap-3">
+                <i className="bi bi-whatsapp"></i> Chat Kami
+              </button>
               <Link href="/layanan">
                 <a className="btn btn-outline-light btn-lg px-4">
                   <i className="bi bi-journal"></i> Lihat Layanan Kami
@@ -45,8 +47,109 @@ function Main() {
         </div>
       </div>
 
-      <div className='container'>
-        <div className="d-flex justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+      <div className="pt-4 bg-light">
+        <div className="text-center">
+          <h2 className="fw-bolder">POSTINGAN INSTAGRAM</h2>
+          <p className="lead fw-normal text-muted mb-5">Lebih update karena terhubung dengan instagram</p>
+        </div>
+        <div className="container card border-0 shadow rounded-3 overflow-hidden">
+          <div className="card-body p-0">
+            <div className="row gx-0">
+              <div className="col-lg-6 col-xl-5 py-lg-5">
+                <div className="p-4 p-md-5">
+                  <div className="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
+                  <div className="h2 fw-bolder">Article heading goes here</div>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus ab doloremque, qui doloribus ea officiis...</p>
+                  <a className="stretched-link text-decoration-none" href="#!">
+                    Read more
+                    <i className="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+              <div className="col-lg-6 col-xl-7">
+                <div
+                  className={styles['bg-featured-blog']}
+                  style={{ backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")" }}>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container mt-5">
+          <div className="row gx-5">
+            <div className="col-xl-8">
+              <div className="row gx-5">
+                <div className="col-lg-6 mb-5">
+                  <div className="card h-100 shadow border-0">
+                    <img className="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
+                    <div className="card-body p-4">
+                      <div className="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
+                      <a className="text-decoration-none link-dark stretched-link" href="#!"><div className="h5 card-title mb-3">Blog post title</div></a>
+                      <p className="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <div className="card-footer p-4 pt-0 bg-transparent border-top-0">
+                      <div className="d-flex align-items-end justify-content-between">
+                        <div className="d-flex align-items-center">
+                          <img className="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                          <div className="small">
+                            <div className="fw-bold">Kelly Rowan</div>
+                            <div className="text-muted">March 12, 2022 &middot; 6 min read</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-6 mb-5">
+                  <div className="card h-100 shadow border-0">
+                    <img className="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..." />
+                    <div className="card-body p-4">
+                      <div className="badge bg-primary bg-gradient rounded-pill mb-2">Media</div>
+                      <a className="text-decoration-none link-dark stretched-link" href="#!"><div className="h5 card-title mb-3">Another blog post title</div></a>
+                      <p className="card-text mb-0">This text is a bit longer to illustrate the adaptive height of each card. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <div className="card-footer p-4 pt-0 bg-transparent border-top-0">
+                      <div className="d-flex align-items-end justify-content-between">
+                        <div className="d-flex align-items-center">
+                          <img className="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                          <div className="small">
+                            <div className="fw-bold">Josiah Barclay</div>
+                            <div className="text-muted">March 23, 2022 &middot; 4 min read</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-4">
+              <div className="card border-0 h-100">
+                <div className="card-body p-4">
+                  <div className="d-flex h-100 align-items-center justify-content-center">
+                    <div className="text-center">
+                      <div className="h6 fw-bolder">@ryanprsetyo_</div>
+                      <p className="text-muted mb-4">
+                        Penasaran dengan postingan lainnya?
+                      </p>
+                      <div className="h6 fw-bolder">Ikuti Kami</div>
+                      <a className="fs-5 px-2 link-dark" href="#!"><i className="bi-instagram"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className='container mt-5 pt-5'>
+        <div className="text-center">
+          <h2 className="fw-bolder">KEUNGGULAN KAMI</h2>
+          <p className="lead fw-normal text-muted mb-5">Berikut alasan kenapa kami mitra jasa service sofa terbaik Anda</p>
+        </div>
+        <div className="d-flex justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
           <div className="col d-flex align-items-start">
             <i className="px-4 bi bi-people-fill" />
             <div>
@@ -71,34 +174,13 @@ function Main() {
         </div>
       </div>
 
-      <div className="">
-        <div className="container card border-0 shadow rounded-3 overflow-hidden">
-          <div className="card-body p-0">
-            <div className="row gx-0">
-              <div className="col-lg-6 col-xl-5 py-lg-5">
-                <div className="p-4 p-md-5">
-                  <div className="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                  <div className="h2 fw-bolder">Article heading goes here</div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus ab doloremque, qui doloribus ea officiis...</p>
-                  <a className="stretched-link text-decoration-none" href="#!">
-                    Read more
-                    <i className="bi bi-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
-              <div className="col-lg-6 col-xl-7">
-                <div
-                  className={styles['bg-featured-blog']}
-                  style={{ backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")" }}>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className='bg-light'>
+      <div className='container mt-5 pt-5'>
+        <div className="text-center">
+          <h2 className="fw-bolder">SEKILAS TENTANG BUNGA SOFA</h2>
+          <p className="lead fw-normal text-muted mb-5">Penasaran dengan kami? kepoin yuk</p>
         </div>
-      </div>
-
-      <div className='container'>
-        <div className="mt-5 row featurette">
+        <div className="row featurette">
           <div className="col-md-7 py-2">
             <div className='mb-2'>
               <h2 className="featurette-heading fw-normal lh-1"><i className="pe-2 bi bi-caret-right-fill"></i>Jenis bahan yang kami gunakan</h2>
@@ -122,6 +204,16 @@ function Main() {
             <img className={`${styles['bd-placeholder-img']} mx-auto rounded-top`} width="100%" height="500" src="/static/images/wall-1.png" />
           </div>
         </div>
+        <div className="mt-3 row gx-5 align-items-center">
+          <div className="col-lg-6"><img className="img-fluid rounded-top mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
+          <div className="col-lg-6">
+            <h2 className="featurette-heading fw-normal lh-1"><i className="pe-2 bi bi-caret-right-fill"></i>Tentang Kami</h2>
+            <p className="lead">
+              Cahaya Sofa adalah workshop yang bergerak pada bidang pembuatan dan service sofa / kursi yang beralamat di Jogja. Kami menyediakan jasa pembuatan dan service sofa dengan berbagai jenis dan model, untuk berbagai lokasi seperti, perumahan, perkantoran, sekolah, cafe, gedung pemerintahan,fasilitas umum, dan lokasi lainnya yang berada di daerah Jogja dan sekitarnya.
+            </p>
+          </div>
+        </div>
+      </div>
       </div>
     </Layout>
   </>)
