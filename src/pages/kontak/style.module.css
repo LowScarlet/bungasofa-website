@@ -1,0 +1,21 @@
+.bd-placeholder-img {
+  object-fit: cover;
+  font-size: 1.125rem;
+  text-anchor: start;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.secondary-heroes {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #222;
+  background-image:
+    linear-gradient(
+        rgba(0, 24, 51, 0.7),
+        rgba(0, 24, 51, 0.2),
+        rgba(0, 24, 51, 0.7)
+    ), 
+    url('/static/images/heroes/secondary.png');
+}

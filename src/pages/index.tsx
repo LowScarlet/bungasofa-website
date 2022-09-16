@@ -9,10 +9,26 @@ import styles from './style.module.css'
 import Link from 'next/link'
 import Marquee from "react-fast-marquee";
 import Head from 'next/head'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { whatsapp_message } from '../components/whatsapp_message'
 
 function Main() {
+  const [data, setData] = useState(null)
+  const [isLoading, setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    fetch('/api/instagram_post')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setLoading(false)
+      })
+  }, [])
+
+  if (isLoading) return <p>Loading...</p>
+  if (!data) return <p>No profile data</p>
+
   return (<>
     <Head>
       <title>Bunga Sofa - Servis & Produsen Sofa Riau</title>
@@ -57,20 +73,62 @@ function Main() {
             <div className="row gx-0">
               <div className="col-lg-6 col-xl-5 py-lg-5">
                 <div className="p-4 p-md-5">
-                  <div className="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                  <div className="h2 fw-bolder">Article heading goes here</div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus ab doloremque, qui doloribus ea officiis...</p>
-                  <a className="stretched-link text-decoration-none" href="#!">
+                  <div className="badge bg-primary bg-gradient rounded-pill mb-2">Terbaru!</div>
+                  <div className="h2 fw-bolder">
+                    Instagram Post #1
+                  </div>
+                  <p>
+                    {
+                      isLoading ? (
+                        'Loading..'
+                      ) : (
+                        data['data'][0]['caption']
+                      )
+                    }
+                  </p>
+                  <a className="stretched-link text-decoration-none" href=
+                    {
+                      isLoading ? (
+                        '#'
+                      ) : (
+                        data['data'][0]['permalink']
+                      )
+                    }
+                  >
                     Read more
                     <i className="bi bi-arrow-right"></i>
                   </a>
                 </div>
+                <div className="card-footer p-4 pt-0 bg-transparent border-top-0">
+                  <div className="d-flex align-items-end justify-content-between">
+                    <div className="d-flex align-items-center">
+                          <img className="rounded-circle me-3" src="/static/logo/brand-logo.ico" alt="..." />
+                      <div className="small">
+                        <div className="fw-bold">@ryanprsetyo_</div>
+                        <div className="text-muted">March 23, 2022 &middot; <i className="pe-1 bi bi-hand-thumbs-up" />10 <i className="pe-1 bi bi-chat-heart" />10</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="col-lg-6 col-xl-7">
-                <div
-                  className={styles['bg-featured-blog']}
-                  style={{ backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")" }}>
-                </div>
+                {
+                  isLoading ? (
+                    <div />
+                  ) : (
+                    data['data'][0]['media_type'] === "VIDEO" ? (
+                      <div
+                        className={styles['bg-featured-blog']}
+                        style={{ backgroundImage: "url(" + `${data['data'][0]['thumbnail_url']}` + ")" }}>
+                      </div>
+                    ) : (
+                      <div
+                        className={styles['bg-featured-blog']}
+                        style={{ backgroundImage: "url(" + `${data['data'][0]['media_url']}` + ")" }}>
+                      </div>
+                    )
+                  )
+                }
               </div>
             </div>
           </div>
@@ -82,19 +140,42 @@ function Main() {
               <div className="row gx-5">
                 <div className="col-lg-6 mb-5">
                   <div className="card h-100 shadow border-0">
-                    <img className="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
+                    {
+                      isLoading ? (
+                        <div />
+                      ) : (
+                        data['data'][1]['media_type'] === "VIDEO" ? (
+                          <div
+                            className={`${styles['bg-secondary-blog']} rounded-top`}
+                            style={{ backgroundImage: "url(" + `${data['data'][1]['thumbnail_url']}` + ")" }}>
+                          </div>
+                        ) : (
+                          <div
+                            className={`${styles['bg-secondary-blog']} rounded-top`}
+                            style={{ backgroundImage: "url(" + `${data['data'][1]['media_url']}` + ")" }}>
+                          </div>
+                        )
+                      )
+                    }
                     <div className="card-body p-4">
-                      <div className="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                      <a className="text-decoration-none link-dark stretched-link" href="#!"><div className="h5 card-title mb-3">Blog post title</div></a>
-                      <p className="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a className="text-decoration-none link-dark stretched-link" href="#!"><div className="h5 card-title mb-3">Instagram Post #2</div></a>
+                      <p className="card-text mb-0">
+                        {
+                          isLoading ? (
+                            'Loading..'
+                          ) : (
+                            data['data'][1]['caption']
+                          )
+                        }
+                      </p>
                     </div>
                     <div className="card-footer p-4 pt-0 bg-transparent border-top-0">
                       <div className="d-flex align-items-end justify-content-between">
                         <div className="d-flex align-items-center">
-                          <img className="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                          <img className="rounded-circle me-3" src="/static/logo/brand-logo.ico" alt="..." />
                           <div className="small">
-                            <div className="fw-bold">Kelly Rowan</div>
-                            <div className="text-muted">March 12, 2022 &middot; 6 min read</div>
+                            <div className="fw-bold">@ryanprsetyo_</div>
+                            <div className="text-muted">March 23, 2022 &middot; <i className="pe-1 bi bi-hand-thumbs-up" />10 <i className="pe-1 bi bi-chat-heart" />10</div>
                           </div>
                         </div>
                       </div>
@@ -103,19 +184,42 @@ function Main() {
                 </div>
                 <div className="col-lg-6 mb-5">
                   <div className="card h-100 shadow border-0">
-                    <img className="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..." />
+                    {
+                      isLoading ? (
+                        <div />
+                      ) : (
+                        data['data'][2]['media_type'] === "VIDEO" ? (
+                          <div
+                            className={`${styles['bg-secondary-blog']} rounded-top`}
+                            style={{ backgroundImage: "url(" + `${data['data'][2]['thumbnail_url']}` + ")" }}>
+                          </div>
+                        ) : (
+                          <div
+                            className={`${styles['bg-secondary-blog']} rounded-top`}
+                            style={{ backgroundImage: "url(" + `${data['data'][2]['media_url']}` + ")" }}>
+                          </div>
+                        )
+                      )
+                    }
                     <div className="card-body p-4">
-                      <div className="badge bg-primary bg-gradient rounded-pill mb-2">Media</div>
-                      <a className="text-decoration-none link-dark stretched-link" href="#!"><div className="h5 card-title mb-3">Another blog post title</div></a>
-                      <p className="card-text mb-0">This text is a bit longer to illustrate the adaptive height of each card. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a className="text-decoration-none link-dark stretched-link" href="#!"><div className="h5 card-title mb-3">Instagram Post #3</div></a>
+                      <p className="card-text mb-0">
+                        {
+                          isLoading ? (
+                            'Loading..'
+                          ) : (
+                            data['data'][2]['caption']
+                          )
+                        }
+                      </p>
                     </div>
                     <div className="card-footer p-4 pt-0 bg-transparent border-top-0">
                       <div className="d-flex align-items-end justify-content-between">
                         <div className="d-flex align-items-center">
-                          <img className="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
+                          <img className="rounded-circle me-3" src="/static/logo/brand-logo.ico" alt="..." />
                           <div className="small">
-                            <div className="fw-bold">Josiah Barclay</div>
-                            <div className="text-muted">March 23, 2022 &middot; 4 min read</div>
+                            <div className="fw-bold">@ryanprsetyo_</div>
+                            <div className="text-muted">March 23, 2022 &middot; <i className="pe-1 bi bi-hand-thumbs-up" />10 <i className="pe-1 bi bi-chat-heart" />10</div>
                           </div>
                         </div>
                       </div>
@@ -206,14 +310,14 @@ function Main() {
           </div>
           <div className="mt-3 row gx-5 align-items-center">
             <div className="col-lg-6">
-              <div id="map-container-google-2" className="pt-3 z-depth-1-half map-container" style={{height: "500px"}}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3354.951619395994!2d102.27140055243648!3d-0.3761584680162686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e2991f6f237b029%3A0xa919f42516a25f4e!2sBunga%20Sofa!5e0!3m2!1sen!2sid!4v1655500319544!5m2!1sen!2sid" width="100%" height="450" style={{border: 0}} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <div id="map-container-google-2" className="pt-3 z-depth-1-half map-container" style={{ height: "500px" }}>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3354.951619395994!2d102.27140055243648!3d-0.3761584680162686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e2991f6f237b029%3A0xa919f42516a25f4e!2sBunga%20Sofa!5e0!3m2!1sen!2sid!4v1655500319544!5m2!1sen!2sid" width="100%" height="450" style={{ border: 0 }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
             <div className="col-lg-6">
               <h2 className="featurette-heading fw-normal lh-1"><i className="pe-2 bi bi-caret-right-fill"></i>Tentang Kami</h2>
               <p className="lead">
-              Bunga Sofa adalah workshop yang bergerak di bidang furniture. Kami menerima pembuatan sofa costum dan servis sofa dengan berbagai jenis/model. Kami menyediakan jasa pembuatan dan servis sofa dengan berbagai jenis dan model untuk berbagai lokasi seperti, perumahan, perkantoran, sekolah, cafe, gedung pemerintahan, fasilitas umum, dan lokasi lainnya yang berada di Kota Air Molek.
+                Bunga Sofa adalah workshop yang bergerak di bidang furniture. Kami menerima pembuatan sofa costum dan servis sofa dengan berbagai jenis/model. Kami menyediakan jasa pembuatan dan servis sofa dengan berbagai jenis dan model untuk berbagai lokasi seperti, perumahan, perkantoran, sekolah, cafe, gedung pemerintahan, fasilitas umum, dan lokasi lainnya yang berada di Kota Air Molek.
               </p>
             </div>
           </div>
