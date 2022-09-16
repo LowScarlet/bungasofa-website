@@ -5,6 +5,7 @@ import Head from "next/head"
 import Layout from "../../components/layout"
 import styles from './style.module.css'
 import Image from 'next/image'
+import { instagram, phone, whatsapp } from "../../components/link_packs"
 
 function Main() {
     return (<>
@@ -28,13 +29,9 @@ function Main() {
                         <div className='mb-2'>
                             <p className="lead">Silahkan hubungi kami untuk konsultasi jika ada pertanyaan mengenai jasa kami. Kami siap membantu segala kebutuhan Anda.</p>
                             <ul className="text-muted list-unstyled">
-                                <li>Sofa 3.2.1</li>
-                                <li>Sofa sudut L</li>
-                                <li>Sofa minimalis</li>
-                                <li>Sofa bed</li>
-                                <li>Sofa Jaguar</li>
-                                <li>Sofa Syahrini</li>
-                                <li>Dan lain-lain</li>
+                                <li className="nav-item mb-2"><a href={whatsapp} target="_blank" rel="noreferrer" className="nav-link p-0 text-muted"><i className="pe-2 bi bi-whatsapp"></i>0822-8474-1825</a></li>
+                                <li className="nav-item mb-2"><a href={phone} target="_blank" rel="noreferrer" className="nav-link p-0 text-muted"><i className="pe-2 bi bi-telephone-inbound"></i>0822-8474-1825</a></li>
+                                <li className="nav-item mb-2"><a href={instagram} target="_blank" rel="noreferrer" className="nav-link p-0 text-muted"><i className="pe-2 bi bi-instagram"></i>@ryanprsetyo_</a></li>
                             </ul>
                         </div>
                     </div>
