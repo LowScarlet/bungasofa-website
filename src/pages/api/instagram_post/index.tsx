@@ -1,7 +1,7 @@
 const ApiGetInstagramPost = async (req:any, res:any) => {
     if (req.method === 'GET') {
         const fields = 'id,media_type,media_url,username,timestamp,caption,permalink,thumbnail_url'
-        const access_token = 'IGQVJWNFl3VXBqX2tkT1NGSDVQOTF4c0lMQjVPWXR3NjVhSi1OQnA2NDE4UndtMC1XX2tfSC1MTGpMa1dnQkFEbkJjQ0FZAc0RIUTFib2dBX09XLTVZAaGZADWXFGSi1VcEVnZA2xkRGZAhU09TVWpVZAHBNbQZDZD'
+        const access_token = process.env.INSTA_TOKEN;
 
         try {
             const apiRes = await fetch(`https://graph.instagram.com/v14.0/me/media?fields=${fields}&access_token=${access_token}`, {
