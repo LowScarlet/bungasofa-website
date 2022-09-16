@@ -91,7 +91,7 @@ function Main() {
                       ) : (
                         data['data'][0]['permalink']
                       )
-                    }
+                    } target="_blank" rel="noreferrer"
                   >
                     Read more
                     <i className="bi bi-arrow-right"></i>
@@ -171,7 +171,7 @@ function Main() {
                           ) : (
                             data['data'][1]['permalink']
                           )
-                        }
+                        } target="_blank" rel="noreferrer"
                       >
                         <div className="h5 card-title mb-3">
                           <i className="pe-2 bi bi-instagram"></i> Instagram Post #2
@@ -233,7 +233,7 @@ function Main() {
                           ) : (
                             data['data'][2]['permalink']
                           )
-                        }
+                        } target="_blank" rel="noreferrer"
                       >
                         <div className="h5 card-title mb-3">
                           <i className="pe-2 bi bi-instagram"></i> Instagram Post #3
