@@ -10,7 +10,9 @@ function Main() {
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
-      <img className="pe-4 d-block mx-auto" src="/static/logo/logo_with_brandname.png" alt="" width={200} />
+      <Link href="/">
+        <a><img className="pe-4 d-block mx-auto" src="/static/logo/logo_with_brandname.png" alt="" width={200} /></a>
+      </Link>
 
       <div className="collapse navbar-collapse" id="navbarsExample07">
         <ul className="nav nav-pills navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase font-weight-bold text-center">
