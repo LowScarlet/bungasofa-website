@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from 'next/image'
 import styles from './style.module.css'
-import { whatsapp_message } from '../whatsapp_message'
 import { glocation, instagram, phone, whatsapp } from '../link_packs'
 import Link from 'next/link'
 

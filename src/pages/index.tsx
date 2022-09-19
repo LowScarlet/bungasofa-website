@@ -10,7 +10,6 @@ import Link from 'next/link'
 import Marquee from "react-fast-marquee";
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import { whatsapp_message } from '../components/whatsapp_message'
 import moment from 'moment'
 import { gmap, instagram, whatsapp } from '../components/link_packs'
 
