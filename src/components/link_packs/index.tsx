@@ -1,4 +1,4 @@
-export const whatsapp = "https://api.whatsapp.com/send?phone=6282284741825&text=Halo+admin+Bunga+Sofa+tolong+jasa+servis+dan+pembuatan+sofa-nya."
+export const whatsapp = "https://api.whatsapp.com/send?phone=6282284741825&text=Halo+admin+Bunga+Sofa.+Mohon+info+jasa+servis+sofa+atau+pembuatan+sofa."
 export const instagram = "https://www.instagram.com/ryanprsetyo_/"
 export const phone = "tel: +6282284741825"
 export const glocation = ""
