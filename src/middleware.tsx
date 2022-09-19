@@ -14,7 +14,7 @@ export function middleware(request:any) {
         }
 
         if (request.nextUrl.hostname != prod_domain) {
-            return NextResponse.redirect(new URL('https://bungasofa.id', request.url))
+            return NextResponse.redirect(new URL('https://'+prod_domain, request.url))
         }
     }
 }
