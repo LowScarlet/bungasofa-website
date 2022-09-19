@@ -9,6 +9,8 @@ export function middleware(request:any) {
             return NextResponse.redirect(new URL(whatsapp, request.url))
         } else if (sub === 'instagram.') {
             return NextResponse.redirect(new URL(instagram, request.url))
+        } else {
+            return NextResponse.redirect(new URL('https://bungasofa.id', request.url))
         }
     }
 }
