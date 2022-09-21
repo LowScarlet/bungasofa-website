@@ -15,6 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (<>
     <Head>
       <link rel="icon" href="/static/logo/brand-logo.ico" />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2744251981420545" crossOrigin="anonymous"></script>
     </Head>
     <Component {...pageProps} />
   </>)
